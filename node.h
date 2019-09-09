@@ -9,7 +9,12 @@ struct Node {
 
     void killSelf() {
         // TODO
+        if(this->next != nullptr){
+            this->next->killSelf();
+        }
+        delete this;
     }
+    Node(T value): data{value}, next{nullptr}, prev{nullptr} {}    // Constructor
 };
 
 #endif
