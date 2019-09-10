@@ -69,9 +69,16 @@ class ForwardList : public List<T> {
                 throw invalid_argument("Lista vacia, operacion no permitida");
             }
             Node<T>* original_head = this->head;
-            this->head = this->head->next;  // update head with the second one
-            delete original_head;
-            this->nodes--;  //update number of lists's nodes
+            if(original_head->next != nullptr){
+                this->head = this->head->next;  // update head with the second one
+                delete original_head;
+                this->nodes--;  //update number of lists's nodes
+            }
+            else{
+                delete original_head;
+                this->head = this->tail = nullptr;
+                this->nodes--;
+            }
         }
 
         void pop_back() {
@@ -79,15 +86,21 @@ class ForwardList : public List<T> {
                 throw invalid_argument("Lista vacia, operacion no permitida");
             }
             Node<T>* itera_node_new_tail = this->head;
-            //Node<T>* original_tail = this->tail;
             // actions for New tail
             for(int i=0; i<this->nodes-2; ++i){
                 itera_node_new_tail = itera_node_new_tail->next;
             }
-            itera_node_new_tail->next->killSelf(); // Kill original tail
-            this->tail = itera_node_new_tail;   // New tail
-            this->tail->next = nullptr;
-            this->nodes--; // Update number of lists's nodes
+            if(itera_node_new_tail->next != nullptr){
+                itera_node_new_tail->next->killSelf(); // Kill original tail
+                this->tail = itera_node_new_tail;   // New tail
+                this->tail->next = nullptr;
+                this->nodes--; // Update number of lists's nodes
+            }
+            else{
+                delete itera_node_new_tail;
+                this->head = this->tail = nullptr;
+                this->nodes--;
+            }
         }
 
         T operator[](int index) {
@@ -114,11 +127,13 @@ class ForwardList : public List<T> {
         }
 
         void clear() {
-            // TODO
-            std::cout << "Clear method \n";
-            this->head->killSelf();
-            this->head = nullptr;
-            this->tail = nullptr;
+            if(this->nodes >= 1){
+                std::cout << "Clear method \n";
+                this->head->killSelf();
+                this->head = nullptr;
+                this->tail = nullptr;
+                this->nodes = 0;
+            }
         }
 
         void sort() {

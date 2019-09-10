@@ -8,11 +8,14 @@ int main(int argc, char *argv[]) {
     cout << "\tLists Practice" << endl;
     cout << "===========================================================" << endl << endl;
 
-    //Tester::execute();
-    /*ForwardList<int> linkedList;
+    Tester::execute();
+    ForwardList<int> linkedList;
+    linkedList.sort();
     ForwardList<int> linkedList2;
-    linkedList.push_front(20);
-    linkedList.push_front(30);
+    //linkedList.push_front(20);
+    //linkedList.push_front(30);
+    //linkedList.print();
+    /*
     linkedList.push_front(50);
     linkedList.push_back(100);
     linkedList2.push_back(200);
@@ -49,17 +52,18 @@ int main(int argc, char *argv[]) {
     cout << linkedList.size() << '\n';
     cout << "Slicing: \n";
     cout << linkedList[2] << '\n';
-    cout << linkedList[3] << '\n';
-    cout << "Pop_back: \n";
-    linkedList.pop_back();
-    linkedList.print();
-    cout << linkedList.size() << '\n';
-    cout << linkedList.front();
+    cout << linkedList[3] << '\n';*/
+    //cout << "Pop_back: \n";
+    //linkedList.pop_back();
+    //linkedList.print();
+    //cout << linkedList.size() << '\n';
+    /*cout << linkedList.front();
     cout << linkedList.back();
     cout << "Pop_front: \n";
     linkedList.pop_front();
     linkedList.print();
-    cout << linkedList.size() << '\n';
+    cout << linkedList.size() << '\n';*/
+    /*
     cout << linkedList.front();
     cout << linkedList.back();
     cout << "Slicing: \n";
@@ -70,6 +74,32 @@ int main(int argc, char *argv[]) {
     linkedList.sort();
     linkedList.print();*/
 
-
+    //Linked List
+    /*LinkedList<int> linkedL1;
+    linkedL1.push_front(20);
+    linkedL1.push_front(30);
+    linkedL1.print();
+    linkedL1.printFromTailToHead();
+    linkedL1.push_back(40);
+    linkedL1.push_back(50);
+    linkedL1.push_back(60);
+    linkedL1.print();
+    cout << "size: " << linkedL1.size() << '\n';
+    //linkedL1.printFromTailToHead();
+    cout << linkedL1.front() << '\n';
+    cout << linkedL1.back() << '\n';
+    cout << "pop_front \n";
+    linkedL1.pop_front();
+    linkedL1.print();
+    cout << linkedL1.front() << '\n';
+    cout << linkedL1.back() << '\n';
+    cout << "size: " << linkedL1.size() << '\n';
+    cout << "pop_back \n";
+    linkedL1.pop_back();
+    linkedL1.print();
+    linkedL1.printFromTailToHead();
+    cout << linkedL1.front() << '\n';
+    cout << linkedL1.back() << '\n';
+    cout << "size: " << linkedL1.size() << '\n';*/
     return EXIT_SUCCESS;
 }
