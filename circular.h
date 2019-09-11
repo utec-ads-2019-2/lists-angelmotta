@@ -2,6 +2,7 @@
 #define CIRCULAR_H
 
 #include "list.h"
+#include <algorithm>
 
 template <typename T>
 class CircularLinkedList : public List<T> {
@@ -37,6 +38,7 @@ class CircularLinkedList : public List<T> {
         }
 
         void print(){
+            if(this->nodes == 0) return;
             Node<T>* actual = this->head;
             do{
                 std::cout << actual->data << " ";
@@ -148,7 +150,16 @@ class CircularLinkedList : public List<T> {
         }
 
         T operator[](int index) {
-            // TODO
+            if(index < 0 || index >= this->nodes){
+                throw out_of_range("Error bro! index out of range!" );
+            }
+            Node<T>* temp_node = this->head;
+            for(int i=0; i<=index; ++i){
+                if(i == index){
+                    return temp_node->data;
+                }
+                temp_node = temp_node->next;
+            }
         }
 
         bool empty() {
@@ -160,15 +171,51 @@ class CircularLinkedList : public List<T> {
         }
 
         void clear() {
-            // TODO
+            if(this->nodes == 0) return;
+            std::cout << "Execution of Clear method from Circular List \n";
+            Node<T>* itera_node = this->head;
+            if(this->nodes == 1){
+                delete itera_node;
+                this->nodes = 0;
+                return;
+            }
+            for(int i=0; i<this->nodes; ++i){
+                if(i == 0) continue;
+                itera_node = itera_node->next;
+                delete itera_node->prev;
+            }
+            delete itera_node;
+            this->nodes = 0;
         }
 
         void sort() {
-            // TODO
+            vector<int> values;
+            Node<T>* actual = this->head;
+            for(int i=0; i<this->nodes; ++i){
+                values.push_back(actual->data);
+                actual = actual->next;
+            }
+            std::sort(values.begin(),values.end());
+            actual = this->head;
+            for(int i=0; i<this->nodes; ++i){
+                actual->data =values[i];
+                actual = actual->next;
+            }
         }
     
         void reverse() {
-            // TODO
+            vector<int> values;
+            Node<T>* actual = this->head;
+            for(int i=0; i<this->nodes; ++i){
+                values.push_back(actual->data);
+                actual = actual->next;
+            }
+            actual = this->head;
+            std::reverse(values.begin(), values.end());
+            for(auto element : values){
+                actual->data = element;
+                actual = actual->next;
+            }
         }
 
         string name() {
@@ -183,8 +230,25 @@ class CircularLinkedList : public List<T> {
             // TODO
         }
 
-        void merge(CircularLinkedList<T> list) {
-            // TODO
+        void merge(CircularLinkedList<T> &list) {
+            if(list.nodes > 0){
+                //cout << "Initial: number of nodes " << this->nodes << "\n";
+                Node<T>* actual = list.head;
+                for(int i=0; i<list.nodes; ++i){
+                    //cout << actual->data << " ";
+                    this->push_back(actual->data);
+                    //cout << "Node: " << this->nodes << "\n";
+                    actual = actual->next;
+                }
+            }
+        }
+
+        ~CircularLinkedList(){
+            if(this->nodes > 0){
+                std::cout << "\n";
+                std::cout << "Destructor: eliminación de elementos de la Lista \n";
+                clear();
+            }
         }
 };
 

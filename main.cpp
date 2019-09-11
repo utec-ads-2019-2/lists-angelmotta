@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
     cout << "\tLists Practice" << endl;
     cout << "===========================================================" << endl << endl;
 
-    //Tester::execute();
+    Tester::execute();
     /*ForwardList<int> linkedList;
     linkedList.sort();
     ForwardList<int> linkedList2;*/
@@ -104,6 +104,7 @@ int main(int argc, char *argv[]) {
     cout << "size: " << linkedL1.size() << '\n';*/
 
     // Circular List
+    /*
     CircularLinkedList<int> circularL1;
     circularL1.push_front(10);
     circularL1.push_front(20);
@@ -147,5 +148,48 @@ int main(int argc, char *argv[]) {
     cout << "back: " << circularL1.back() << '\n';
     cout << "head_prev: " << circularL1.head_prev() << '\n';
     cout << "tail_next: " << circularL1.tail_next() << '\n';
+    cout << "Size: " << circularL1.size() << '\n';
+    //cout << "Clear: \n";
+    //circularL1.clear();
+    //cout << "Size: " << circularL1.size() << '\n';
+    cout << "Sort circular List \n";
+    circularL1.sort();
+    cout << "Print normal: \n";
+    circularL1.print();
+    cout << "front: " << circularL1.front() << '\n';
+    cout << "back: " << circularL1.back() << '\n';
+    cout << "head_prev: " << circularL1.head_prev() << '\n';
+    cout << "tail_next: " << circularL1.tail_next() << '\n';
+    cout << "Size: " << circularL1.size() << '\n';
+    cout << "Reverse circular List \n";
+    circularL1.reverse();
+    cout << "Print normal: \n";
+    circularL1.print();
+    cout << "front: " << circularL1.front() << '\n';
+    cout << "back: " << circularL1.back() << '\n';
+    cout << "head_prev: " << circularL1.head_prev() << '\n';
+    cout << "tail_next: " << circularL1.tail_next() << '\n';
+    cout << "Size: " << circularL1.size() << '\n';
+    CircularLinkedList<int> circularL2;
+    circularL2.push_back(100);
+    circularL2.push_back(200);
+    circularL2.push_back(300);
+    cout << "Print L2 normal: \n";
+    circularL2.print();
+    cout << "front: " << circularL2.front() << '\n';
+    cout << "back: " << circularL2.back() << '\n';
+    cout << "head_prev: " << circularL2.head_prev() << '\n';
+    cout << "tail_next: " << circularL2.tail_next() << '\n';
+    cout << "Size: " << circularL2.size() << '\n';
+    cout << "Merge \n";
+    circularL1.merge(circularL2);
+    cout << "Print normal: \n";
+    circularL1.print();
+    cout << "front: " << circularL1.front() << '\n';
+    cout << "back: " << circularL1.back() << '\n';
+    cout << "head_prev: " << circularL1.head_prev() << '\n';
+    cout << "tail_next: " << circularL1.tail_next() << '\n';
+    cout << "Size: " << circularL1.size() << '\n';
+    */
     return EXIT_SUCCESS;
 }
