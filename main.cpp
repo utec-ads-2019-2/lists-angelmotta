@@ -8,10 +8,10 @@ int main(int argc, char *argv[]) {
     cout << "\tLists Practice" << endl;
     cout << "===========================================================" << endl << endl;
 
-    Tester::execute();
-    ForwardList<int> linkedList;
+    //Tester::execute();
+    /*ForwardList<int> linkedList;
     linkedList.sort();
-    ForwardList<int> linkedList2;
+    ForwardList<int> linkedList2;*/
     //linkedList.push_front(20);
     //linkedList.push_front(30);
     //linkedList.print();
@@ -75,7 +75,8 @@ int main(int argc, char *argv[]) {
     linkedList.print();*/
 
     //Linked List
-    /*LinkedList<int> linkedL1;
+    /*
+    LinkedList<int> linkedL1;
     linkedL1.push_front(20);
     linkedL1.push_front(30);
     linkedL1.print();
@@ -85,7 +86,7 @@ int main(int argc, char *argv[]) {
     linkedL1.push_back(60);
     linkedL1.print();
     cout << "size: " << linkedL1.size() << '\n';
-    //linkedL1.printFromTailToHead();
+    linkedL1.printFromTailToHead();
     cout << linkedL1.front() << '\n';
     cout << linkedL1.back() << '\n';
     cout << "pop_front \n";
@@ -101,5 +102,50 @@ int main(int argc, char *argv[]) {
     cout << linkedL1.front() << '\n';
     cout << linkedL1.back() << '\n';
     cout << "size: " << linkedL1.size() << '\n';*/
+
+    // Circular List
+    CircularLinkedList<int> circularL1;
+    circularL1.push_front(10);
+    circularL1.push_front(20);
+    circularL1.push_front(30);
+    cout << "Print normal: \n";
+    circularL1.print();
+    cout << "Print reverse \n";
+    circularL1.printFromTailToHead();
+    cout << "front: " << circularL1.front() << '\n';
+    cout << "back: " << circularL1.back() << '\n';
+    cout << "head_prev: " << circularL1.head_prev() << '\n';
+    cout << "tail_next: " << circularL1.tail_next() << '\n';
+    circularL1.push_back(50);
+    circularL1.push_back(60);
+    circularL1.push_back(70);
+    cout << "Print normal: \n";
+    circularL1.print();
+    cout << "Print reverse \n";
+    circularL1.printFromTailToHead();
+    cout << "front: " << circularL1.front() << '\n';
+    cout << "back: " << circularL1.back() << '\n';
+    cout << "head_prev: " << circularL1.head_prev() << '\n';
+    cout << "tail_next: " << circularL1.tail_next() << '\n';
+    cout << "Pop front: \n";
+    circularL1.pop_front();
+    cout << "Print normal: \n";
+    circularL1.print();
+    cout << "Print reverse \n";
+    circularL1.printFromTailToHead();
+    cout << "front: " << circularL1.front() << '\n';
+    cout << "back: " << circularL1.back() << '\n';
+    cout << "head_prev: " << circularL1.head_prev() << '\n';
+    cout << "tail_next: " << circularL1.tail_next() << '\n';
+    cout << "Pop Back: \n";
+    circularL1.pop_back();
+    cout << "Print normal: \n";
+    circularL1.print();
+    cout << "Print reverse \n";
+    circularL1.printFromTailToHead();
+    cout << "front: " << circularL1.front() << '\n';
+    cout << "back: " << circularL1.back() << '\n';
+    cout << "head_prev: " << circularL1.head_prev() << '\n';
+    cout << "tail_next: " << circularL1.tail_next() << '\n';
     return EXIT_SUCCESS;
 }
