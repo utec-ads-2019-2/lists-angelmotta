@@ -9,19 +9,21 @@ int main(int argc, char *argv[]) {
     cout << "===========================================================" << endl << endl;
 
     Tester::execute();
-    /*ForwardList<int> linkedList;
-    linkedList.sort();
-    ForwardList<int> linkedList2;*/
-    //linkedList.push_front(20);
-    //linkedList.push_front(30);
-    //linkedList.print();
     /*
+    ForwardList<int> linkedList;
+    ForwardList<int> linkedList2;
+    linkedList.push_front(20);
+    linkedList.push_front(30);
     linkedList.push_front(50);
-    linkedList.push_back(100);
-    linkedList2.push_back(200);
-    linkedList2.push_back(300);
+    linkedList.push_front(100);
+    //linkedList2.push_back(200);
+    //linkedList2.push_back(300);
     linkedList.print();
-    linkedList2.print();
+    for(auto it = linkedList.begin(); it != linkedList.end(); ++it){
+        cout << *it << " ";
+    }
+    cout << '\n';*/
+    /*linkedList2.print();
     cout << "linkedList front, back and size \n";
     cout << linkedList.front() << '\n';
     cout << linkedList.back() << '\n';
@@ -52,18 +54,18 @@ int main(int argc, char *argv[]) {
     cout << linkedList.size() << '\n';
     cout << "Slicing: \n";
     cout << linkedList[2] << '\n';
-    cout << linkedList[3] << '\n';*/
+    cout << linkedList[3] << '\n';
     //cout << "Pop_back: \n";
     //linkedList.pop_back();
     //linkedList.print();
     //cout << linkedList.size() << '\n';
-    /*cout << linkedList.front();
+    cout << linkedList.front();
     cout << linkedList.back();
     cout << "Pop_front: \n";
     linkedList.pop_front();
     linkedList.print();
-    cout << linkedList.size() << '\n';*/
-    /*
+    cout << linkedList.size() << '\n';
+
     cout << linkedList.front();
     cout << linkedList.back();
     cout << "Slicing: \n";
@@ -72,20 +74,26 @@ int main(int argc, char *argv[]) {
     //cout << linkedList[2] << "\n";
     cout << "Sorting: \n";
     linkedList.sort();
-    linkedList.print();*/
-
+    linkedList.print();
+    */
     //Linked List
     /*
+    cout << "LinkedList \n";
     LinkedList<int> linkedL1;
     linkedL1.push_front(20);
     linkedL1.push_front(30);
-    linkedL1.print();
-    linkedL1.printFromTailToHead();
+    //linkedL1.print();
+    //linkedL1.printFromTailToHead();
     linkedL1.push_back(40);
     linkedL1.push_back(50);
     linkedL1.push_back(60);
     linkedL1.print();
-    cout << "size: " << linkedL1.size() << '\n';
+    for(auto it = linkedL1.begin(); it != linkedL1.end(); ++it){
+        cout << *it << " ";
+    }
+    cout << '\n';
+     */
+    /*cout << "size: " << linkedL1.size() << '\n';
     linkedL1.printFromTailToHead();
     cout << linkedL1.front() << '\n';
     cout << linkedL1.back() << '\n';
@@ -101,16 +109,18 @@ int main(int argc, char *argv[]) {
     linkedL1.printFromTailToHead();
     cout << linkedL1.front() << '\n';
     cout << linkedL1.back() << '\n';
-    cout << "size: " << linkedL1.size() << '\n';*/
+    cout << "size: " << linkedL1.size() << '\n';
 
     // Circular List
-    /*
+    cout << "Circular \n";
     CircularLinkedList<int> circularL1;
     circularL1.push_front(10);
     circularL1.push_front(20);
     circularL1.push_front(30);
     cout << "Print normal: \n";
     circularL1.print();
+    */
+    /*
     cout << "Print reverse \n";
     circularL1.printFromTailToHead();
     cout << "front: " << circularL1.front() << '\n';
@@ -191,5 +201,10 @@ int main(int argc, char *argv[]) {
     cout << "tail_next: " << circularL1.tail_next() << '\n';
     cout << "Size: " << circularL1.size() << '\n';
     */
+    /*CircularLinkedList<int> circularL1;
+    circularL1.push_back(5);
+    circularL1.pop_back();
+    CircularLinkedList<int> circularL2;
+    circularL1.merge(circularL2);*/
     return EXIT_SUCCESS;
 }

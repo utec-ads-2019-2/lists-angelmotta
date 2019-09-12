@@ -186,6 +186,7 @@ class CircularLinkedList : public List<T> {
             }
             delete itera_node;
             this->nodes = 0;
+            this->head = nullptr;
         }
 
         void sort() {
@@ -223,11 +224,11 @@ class CircularLinkedList : public List<T> {
         }
 
         BidirectionalIterator<T> begin() {
-            // TODO
+            return BidirectionalIterator<T>(this->head);
         }
 
 	    BidirectionalIterator<T> end() {
-            // TODO
+            return BidirectionalIterator<T>(this->tail);
         }
 
         void merge(CircularLinkedList<T> &list) {

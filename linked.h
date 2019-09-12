@@ -164,7 +164,7 @@ class LinkedList : public List<T> {
         }
     
         void reverse() {
-            vector<int> values;
+            vector<T> values;
             Node<T>* actual = this->head;
             while(actual != nullptr){
                 values.push_back(actual->data);
@@ -183,11 +183,11 @@ class LinkedList : public List<T> {
         }
 
         BidirectionalIterator<T> begin() {
-            // TODO
+            return BidirectionalIterator<T>(this->head);
         }
 
 	    BidirectionalIterator<T> end() {
-            // TODO
+            return BidirectionalIterator<T>(this->tail->next);
         }
 
         void merge(LinkedList<T> &list) {
