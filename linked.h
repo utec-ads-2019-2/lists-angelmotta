@@ -47,6 +47,7 @@ class LinkedList : public List<T> {
                 this->head = temp;
                 this->tail = temp;
                 this->nodes = 1;
+                // Mismo que en forward
             }
             else{
                 Node<T>* temp = new Node<T>(value);
@@ -126,6 +127,7 @@ class LinkedList : public List<T> {
                 i++;
                 temp_node = temp_node->next;
             }
+            // Mismo que en forward
         }
 
         bool empty() {
@@ -137,6 +139,7 @@ class LinkedList : public List<T> {
         }
 
         void clear() {
+            // Dependes mucho de nodes, sería mejor verificar directo con los punterors, e.g. if (head)
             if(this->nodes >= 1){
                 std::cout << "Clear method \n";
                 this->head->killSelf();

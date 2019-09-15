@@ -64,6 +64,7 @@ class CircularLinkedList : public List<T> {
                 temp->next = temp;
                 temp->prev = temp;
                 this->nodes = 1;
+                // Mismo que en forward
             }
             else{
                 Node<T>* temp = new Node<T>(value);
@@ -108,6 +109,7 @@ class CircularLinkedList : public List<T> {
         }
 
         void pop_front() {
+            // Mismo que en forward
             if(this->nodes == 0){
                 throw invalid_argument("Lista vacia, operacion no permitida");
             }
@@ -127,6 +129,7 @@ class CircularLinkedList : public List<T> {
         }
 
         void pop_back() {
+            // Mismo que en forward
             if(this->nodes == 0){
                 throw invalid_argument("Lista vacia, operacion no permitida");
             }
@@ -150,6 +153,7 @@ class CircularLinkedList : public List<T> {
         }
 
         T operator[](int index) {
+            // En el caso de la circular no es necesario verificar la segunda condición
             if(index < 0 || index >= this->nodes){
                 throw out_of_range("Error bro! index out of range!" );
             }
@@ -160,6 +164,8 @@ class CircularLinkedList : public List<T> {
                 }
                 temp_node = temp_node->next;
             }
+
+            // Esto lo pudiste haber manejado mejor para evitar el warning
         }
 
         bool empty() {
@@ -228,6 +234,7 @@ class CircularLinkedList : public List<T> {
         }
 
 	    BidirectionalIterator<T> end() {
+            // Circular no suele tener tail, y falta un poco para controlar el caso para iterar con un bucle
             return BidirectionalIterator<T>(this->tail);
         }
 

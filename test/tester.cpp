@@ -9,6 +9,7 @@ void Tester::execute() {
         for (int j = 0; j < NUMBER_OF_TESTS; ++j) {
             testList<int>(collections[i]);
             testList<char>(collections[i]);
+            cout << "Test passed: " << j + 1 << endl;
         }
     }
 }
@@ -168,7 +169,12 @@ void Tester::testCircularLinked(CircularLinkedList<T>* list) {
     list->merge(*list1);
     ASSERT(list->size() == 5, "The " + list->name() + " merge is not working");
 
-    auto it = list->begin();
+    /*auto it = list->begin();
+    while (it != list->end()) {
+        cout << *it << endl;
+        ++it;
+    }*/
+    
     ++it;
     ASSERT(*it == elements[1], "The " + list->name() + " iterator is not working");
     ++it;

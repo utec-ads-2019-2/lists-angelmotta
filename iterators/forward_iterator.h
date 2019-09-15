@@ -25,6 +25,7 @@ class ForwardIterator : public Iterator<T> {
         }
 
         T operator*() {
+            // Estaría bueno verificar esto para botar una excepción
             return this->current->data;
         }
 };

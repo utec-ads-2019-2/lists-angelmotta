@@ -38,8 +38,8 @@ class ForwardList : public List<T> {
             if(this->head == nullptr){
                 Node<T>* temp = new Node<T>(value);
                 this->head = temp;
-                this->tail = temp;
-                this->nodes = 1;
+                this->tail = temp; 
+                this->nodes = 1; // Esta línea podría evitarse usando el this->nodes++
             }
             else{
                 Node<T>* temp = new Node<T>(value);
@@ -54,7 +54,7 @@ class ForwardList : public List<T> {
                 Node<T>* temp = new Node<T>(value);
                 this->head = temp;
                 this->tail = temp;
-                this->nodes = 1;
+                this->nodes = 1; // Esta línea podría evitarse usando el this->nodes++
             }
             else{
                 Node<T>* temp = new Node<T>(value);
@@ -65,6 +65,7 @@ class ForwardList : public List<T> {
         }
 
         void pop_front() {
+            // En los pops no es necesario controlar la excepción
             if(this->nodes == 0){
                 throw invalid_argument("Lista vacia, operacion no permitida");
             }
@@ -72,7 +73,8 @@ class ForwardList : public List<T> {
             if(original_head->next != nullptr){
                 this->head = this->head->next;  // update head with the second one
                 delete original_head;
-                this->nodes--;  //update number of lists's nodes
+                this->nodes--;  //update number of lists's nodes 
+                // Esto podría hacerse fuera para reducir el código
             }
             else{
                 delete original_head;
@@ -95,6 +97,7 @@ class ForwardList : public List<T> {
                 this->tail = itera_node_new_tail;   // New tail
                 this->tail->next = nullptr;
                 this->nodes--; // Update number of lists's nodes
+                // Igual que el anterior
             }
             else{
                 delete itera_node_new_tail;
@@ -116,6 +119,7 @@ class ForwardList : public List<T> {
                 i++;
                 temp_node = temp_node->next;
             }
+            // Podría hacerse mejor para evitar el warning
         }
 
         bool empty() {
